@@ -2,6 +2,7 @@
 
 import './globals.css';
 import Navbar from './components/Navbar'; 
+import React from 'react';
 import AnnouncementBar from './components/AnnouncementBar'; // <-- 步驟 1: 匯入新元件
 import Footer from './components/Footer';
 
@@ -12,7 +13,7 @@ export const metadata = {
   description: '您的 AI 智慧造型師',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-Hant">
       <body>
