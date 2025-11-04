@@ -1,7 +1,7 @@
 // app/components/AnnouncementBar.js
-
+import React from 'react';
 // 這是公告列的 CSS 樣式
-const barStyle = {
+const barStyle: React.CSSProperties = {
   backgroundColor: '#fff8e2ff', // 一個醒目的黃色背景
   color: '#8c8c8cff',             // 深色文字
   textAlign: 'center',        // 文字置中

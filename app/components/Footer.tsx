@@ -2,13 +2,14 @@
 
 'use client'; // 因為我們使用了 react-icons
 
+import React from 'react';
 import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaLine } from 'react-icons/fa';
 
 // --- 樣式 Style 物件 ---
 
 // 整個頁尾 (Footer) 的樣式
-const footerStyles = {
+const footerStyles: React.CSSProperties = {
   width: '100%',
   padding: '0rem 0 1rem 0', // 上 4rem, 下 2rem
   backgroundColor: '#1a1a1a', // 深灰色背景
@@ -16,14 +17,14 @@ const footerStyles = {
 };
 
 // 內容容器, 負責 1440px 置中
-const containerStyles = {
+const containerStyles: React.CSSProperties = {
   maxWidth: '1440px',   
   margin: '0 auto',     
   padding: '0 2rem', 
 };
 
 // 多欄位網格 (Grid) 佈局
-const gridStyles = {
+const gridStyles: React.CSSProperties = {
   display: 'grid',
   // RWD: 自動填滿, 每個欄位最小 250px
   gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
@@ -32,14 +33,14 @@ const gridStyles = {
 };
 
 // 每一欄 (Column) 的樣式
-const columnStyles = {
+const columnStyles: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: '0.5rem', // 欄位內項目的間距
 };
 
 // 欄位標題 (例如 "聯絡我們")
-const titleStyles = {
+const titleStyles: React.CSSProperties = {
   fontSize: '1.25rem', // 20px
   fontWeight: 'bold',
   color: '#ffffff', // 標題用純白
@@ -47,25 +48,25 @@ const titleStyles = {
 };
 
 // 一般文字
-const textStyles = {
+const textStyles: React.CSSProperties = {
   fontSize: '0.9rem',
   lineHeight: '0',
 };
 
-const linksContainerStyles = {
+const linksContainerStyles: React.CSSProperties = {
 display: 'flex',
 flexWrap: 'wrap', // 允許連結在空間不夠時換行
 gap: '2rem', // 連結之間的水平間距
 };
 // 頁尾連結
-const linkStyles = {
+const linkStyles: React.CSSProperties = {
   color: '#ccc',
   textDecoration: 'none',
   fontSize: '0.9rem',
 };
 
 // 社群圖示容器
-const socialStyles = {
+const socialStyles: React.CSSProperties = {
   display: 'flex',
   gap: '1rem',
   fontSize: '1.5rem', // 放大圖示
@@ -73,7 +74,7 @@ const socialStyles = {
 };
 
 // Copyright (版權) 區塊
-const copyrightStyles = {
+const copyrightStyles: React.CSSProperties = {
   textAlign: 'center',
   marginTop: '1rem',
   borderTop: '1px solid #666666ff',

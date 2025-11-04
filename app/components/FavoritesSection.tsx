@@ -2,18 +2,18 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-
+import React from 'react';
 // --- 樣式 Style 物件 ---
 
 // 整個區塊 (Section) 的樣式
-const sectionStyles = {
+const sectionStyles: React.CSSProperties = {
   width: '100%',
   padding: '4rem 0', 
   backgroundColor: '#f9f9f9', // 淡灰色背景, 和 HeroSection 一致
 };
 
 // 內容容器, 負責 1440px 置中
-const containerStyles = {
+const containerStyles: React.CSSProperties = {
   maxWidth: '1440px',   
   margin: '0 auto',     
   padding: '0 2rem',    
@@ -23,7 +23,7 @@ const containerStyles = {
 };
 
 // 區塊大標題 ("最受喜愛穿搭")
-const titleStyles = {
+const titleStyles: React.CSSProperties = {
   fontSize: '2rem', 
   fontWeight: 'bold',
   color: '#000',
@@ -31,7 +31,7 @@ const titleStyles = {
 };
 
 // 卡片網格 (Grid) 容器
-const gridStyles = {
+const gridStyles: React.CSSProperties = {
   display: 'grid',
   // 這是 RWD 網格: 
   // - auto-fit: 自動填滿
@@ -41,7 +41,7 @@ const gridStyles = {
 };
 
 // --- (新) 單個畫廊項目 (Gallery Item) 的樣式 ---
-const itemStyles = {
+const itemStyles: React.CSSProperties = {
   position: 'relative', // <-- 關鍵: 為了讓 "排名" 浮在上面
   borderRadius: '12px',
   overflow: 'hidden', // 裁切圖片圓角
@@ -49,7 +49,7 @@ const itemStyles = {
 };
 
 // 圖片的樣式
-const imageStyles = {
+const imageStyles: React.CSSProperties = {
   width: '100%',
   height: 'auto',
   aspectRatio: '3 / 4', // 圖片比例 3:4 (您可以改成 1:1 或 2:3)
@@ -58,7 +58,7 @@ const imageStyles = {
 };
 
 // --- (新) 排名標籤 (Rank Tag) 的樣式 ---
-const rankStyles = {
+const rankStyles: React.CSSProperties = {
   position: 'absolute', // <-- 關鍵: 浮動
   bottom: '1rem',       // 離底部 16px
   left: '1rem',         // 離左側 16px

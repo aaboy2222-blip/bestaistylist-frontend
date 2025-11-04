@@ -2,7 +2,7 @@
 
 'use client'; 
 
-import React, { useState } from 'react'; // <-- 步驟 1: 我們不再需要 useEffect
+import React, { useState, useEffect } from 'react'; // <-- 步驟 1: 我們不再需要 useEffect
 import Image from 'next/image'; 
 
 // 圖片檔案清單 (保持不變)
@@ -17,14 +17,14 @@ const imageList = [
 // --- 樣式 Style 物件 ---
 
 // ... (sectionStyles, containerStyles 保持不變) ...
-const sectionStyles = {
+const sectionStyles: React.CSSProperties = {
   width: '100%',
   padding: '2rem 0', 
   backgroundColor: '#fdf6f0ff', 
   borderBottom: '1px solid #eaeaea',
 };
 
-const containerStyles = {
+const containerStyles: React.CSSProperties = {
   maxWidth: '1440px',   
   margin: '0 auto',     
   padding: '0 2rem',    
@@ -36,7 +36,7 @@ const containerStyles = {
 };
 
 // --- (修改) 左欄：控制項容器 ---
-const controlsContainerStyles = {
+const controlsContainerStyles: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column', 
   gap: '2rem', // <-- 稍微拉大 "風格" 和 "場合" 之間的距離
@@ -45,21 +45,21 @@ const controlsContainerStyles = {
 };
 
 // (新) 按鈕組 (風格, 場合) 的外層
-const controlGroupStyles = {
+const controlGroupStyles: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: '0.75rem', // 標籤和按鈕組的間距
 };
 
 // "風格:" 和 "場合:" 的標籤樣式 (保持不變)
-const labelStyles = {
+const labelStyles: React.CSSProperties = {
   fontSize: '0.9rem',
   fontWeight: '500',
   color: '#333',
 };
 
 // (新) 按鈕組的容器 (水平排列按鈕)
-const buttonGroupStyles = {
+const buttonGroupStyles: React.CSSProperties = {
   // ↓↓↓↓↓↓ 這是關鍵修改 ↓↓↓↓↓↓
   display: 'grid', // 1. 從 'flex' 改成 'grid'
   gap: '0.75rem',
@@ -71,7 +71,7 @@ const buttonGroupStyles = {
 };
 
 // (新) 按鈕的預設樣式
-const toggleButtonStyles = {
+const toggleButtonStyles: React.CSSProperties = {
   padding: '0.5rem 1rem',
   fontSize: '0.9rem',
   border: '1px solid #ccc',
@@ -84,14 +84,14 @@ const toggleButtonStyles = {
 };
 
 // (新) 按鈕 "被選中" 時的樣式
-const activeButtonStyles = {
+const activeButtonStyles: React.CSSProperties = {
   backgroundColor: '#616161ff', // 選中: 黑色
   color: '#ffffff',          // 選中: 白色
   border: '1px solid #3c3c3cff',
 };
 
 // "生成服裝按鈕" 的樣式 (保持不變)
-const buttonStyles = {
+const buttonStyles: React.CSSProperties = {
   padding: '0.75rem 2rem',
   fontSize: '1rem',
   fontWeight: 'bold',
@@ -106,7 +106,7 @@ const buttonStyles = {
 
 
 // --- (修改) 右欄：圖片容器 ---
-const imageContainerStyles = {
+const imageContainerStyles: React.CSSProperties = {
   flex: '1',               
   minWidth: '300px',       
   display: 'flex',
@@ -116,7 +116,7 @@ const imageContainerStyles = {
 };
 
 // --- (修改) 圖片本身的樣式 ---
-const imageStyles = {
+const imageStyles: React.CSSProperties = {
   width: '100%',            // 佔滿容器寬度
   maxWidth: '500px',          // <-- 關鍵: 限制圖片最大寬度
   height: 'auto',             // 高度自動
@@ -134,7 +134,14 @@ export default function HeroSection() {
   const [occasion, setOccasion] = useState('日系');
   
   // 步驟 3: 隨機圖片的 state, 初始值為 null (沒有圖片)
-  const [randomImage, setRandomImage] = useState(null);
+  const [randomImage, setRandomImage] = useState<string | null>(null);
+
+  // --- ↓↓↓ 步驟 2: 把這整段 useEffect 加回來 ↓↓↓ ---
+  useEffect(() => {
+    // 這段程式碼只會在 "元件第一次載入" 時執行一次
+    const randomIndex = Math.floor(Math.random() * imageList.length);
+    setRandomImage(imageList[randomIndex]);
+  }, []); // <-- 這個空的 [] 是關鍵, 代表 "只執行一次 (on load)"
 
   // 步驟 4: 移除 useEffect
 

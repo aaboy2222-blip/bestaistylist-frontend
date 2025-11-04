@@ -1,13 +1,13 @@
 'use client';
 // app/components/Navbar.js
 import { FaFacebookF, FaInstagram, FaLine } from 'react-icons/fa'; // <-- 1. 匯入圖示
-// import { FaFacebook, FaInstagram, FaLine } from 'react-icons/fa'; // <-- 1. 匯入圖示
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 // --- 專為白底 Navbar 設計的新樣式 ---
 
-const navStyles = {
+const navStyles: React.CSSProperties = {
   // --- 佈局 (Layout) ---
   display: 'grid',
   gridTemplateColumns: 'auto minmax(0, 1fr) auto', // <-- 1. 讓中間欄位可以被壓縮
@@ -27,14 +27,14 @@ const navStyles = {
   boxShadow: '0 2px 4px rgba(0,0,0,0.02)', // <-- 4. 加上一點點不易察覺的陰影
 };
 
-const logoLinkStyles = {
+const logoLinkStyles: React.CSSProperties = {
   justifySelf: 'start', // <-- 3. 讓 Logo 在第一欄中靠左對齊
   display: 'flex', // 幫助圖片垂直置中
   alignItems: 'center',
 };
 
 // 中間連結的容器
-const navLinksStyles = {
+const navLinksStyles: React.CSSProperties = {
   display: 'flex',
   justifySelf: 'center', // <-- 4. 讓導覽連結在中間欄置中
   gap: '4rem', // 連結之間的間距 (32px)
@@ -45,7 +45,7 @@ const navLinksStyles = {
 };
 
 // 中間連結的樣式
-const linkStyles = {
+const linkStyles: React.CSSProperties = {
   color: '#333', // 深灰色, 比純黑柔和
   textDecoration: 'none',
   fontSize: '1rem', // 16px
@@ -53,7 +53,7 @@ const linkStyles = {
 };
 
 // 整個右側區塊的容器
-const rightSectionStyles = {
+const rightSectionStyles: React.CSSProperties = {
   justifySelf: 'end', // <-- 5. 讓整個右側區塊在第三欄中靠右對齊
   display: 'flex',
   alignItems: 'center',
@@ -65,7 +65,7 @@ const rightSectionStyles = {
 };
 
 // 社群連結的樣式
-const socialLinksStyles = {
+const socialLinksStyles: React.CSSProperties = {
   display: 'flex',
   gap: '1.2rem', // <-- 2. 稍微增加圖示間的距離
   color: '#555', // 社群 icon 的顏色
@@ -73,13 +73,13 @@ const socialLinksStyles = {
 };
 
 // 登入/註冊按鈕的容器
-const authButtonsStyles = {
+const authButtonsStyles: React.CSSProperties = {
   display: 'flex',
   gap: '1rem',
 };
 
 // 登入按鈕 (描邊)
-const loginButtonStyles = {
+const loginButtonStyles: React.CSSProperties = {
   padding: '0.5rem 1rem',
   color: '#333',
   backgroundColor: 'transparent', // 透明背景
@@ -91,7 +91,7 @@ const loginButtonStyles = {
 };
 
 // 註冊按鈕 (填滿)
-const registerButtonStyles = {
+const registerButtonStyles: React.CSSProperties = {
   padding: '0.5rem 1rem',
   color: 'white',
   backgroundColor: '#000000', // 主要按鈕顏色 (黑色)

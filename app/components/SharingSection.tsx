@@ -2,17 +2,17 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-
+import React from 'react';
 // --- 樣式 Style 物件 ---
 
 // ... (sectionStyles, containerStyles, titleStyles 保持不變) ...
-const sectionStyles = {
+const sectionStyles: React.CSSProperties = {
   width: '100%',
   padding: '0rem 0', 
   backgroundColor: '#ffffff', 
 };
 
-const containerStyles = {
+const containerStyles: React.CSSProperties = {
   maxWidth: '1440px',   
   margin: '0 auto',     
   padding: '0 2rem',    
@@ -21,7 +21,7 @@ const containerStyles = {
   gap: '0rem', 
 };
 
-const titleStyles = {
+const titleStyles: React.CSSProperties = {
   fontSize: '2rem', 
   fontWeight: 'bold',
   color: '#000',
@@ -29,14 +29,14 @@ const titleStyles = {
 };
 
 // --- (修改) 卡片 "網格" 容器 ---
-const gridStyles = {
+const gridStyles: React.CSSProperties = {
   display: 'flex', // <-- 1. 改用 Flex 
   flexDirection: 'column', // <-- 2. 讓卡片垂直堆疊
   gap: '0.2rem', // 每一張卡片之間的間距
 };
 
 // --- (修改) 單張卡片 (Card) 的樣式 ---
-const cardStyles = {
+const cardStyles: React.CSSProperties = {
   display: 'flex', // <-- 3. 卡片內部使用 Flex 佈局 (關鍵)
   gap: '1.5rem',   // 圖片和文字之間的間距
   border: '1px solid #eaeaea',
@@ -51,7 +51,7 @@ const cardStyles = {
 };
 
 // --- (修改) 卡片圖片的樣式 ---
-const cardImageStyles = {
+const cardImageStyles: React.CSSProperties = {
   // 5. "半身圖" 裁切: 鎖定 1:1 的正方形比例
   aspectRatio: '1 / 1', 
   objectFit: 'cover',
@@ -64,7 +64,7 @@ const cardImageStyles = {
 };
 
 // --- (修改) 卡片文字內容的容器 ---
-const cardContentStyles = {
+const cardContentStyles: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: '0.5rem',
@@ -73,25 +73,25 @@ const cardContentStyles = {
 };
 
 // ... (cardTitleStyles, cardDateStyles, cardTextStyles, viewMoreStyles 保持不變) ...
-const cardTitleStyles = {
+const cardTitleStyles: React.CSSProperties = {
   fontSize: '1.25rem', 
   fontWeight: '600',
   color: '#111',
 };
 
-const cardDateStyles = {
+const cardDateStyles: React.CSSProperties = {
   fontSize: '0.9rem',
   color: '#666',
   marginBottom: '0.5rem',
 };
 
-const cardTextStyles = {
+const cardTextStyles: React.CSSProperties = {
   fontSize: '1rem',
   color: '#333',
   lineHeight: '1.6',
 };
 
-const viewMoreStyles = {
+const viewMoreStyles: React.CSSProperties = {
   textAlign: 'center',
   fontSize: '1.1rem',
   fontWeight: 'bold',
